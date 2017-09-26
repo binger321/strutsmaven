@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!--通过常量方式改变struts默认的属性配置 设置action为.do结尾-->
+    <constant name="struts.action.extension" value="do"/>
+
+    <package name="HelloWorldPkg" extends="struts-default">
+<!--        设置默认的class引用，将某个类作为默认的action类-->
+        <default-class-ref class="com.yb.struts.action.DefaultAction"/>
+
+        <action name="login" class="com.yb.struts.action.LoginAction" method="success">
+            <result name="success">success.jsp</result>
+        </action>
+        <action name="hello">
+            <result type="redirect">index.jsp</result>
+        </action>
+    </package>
+</struts>
