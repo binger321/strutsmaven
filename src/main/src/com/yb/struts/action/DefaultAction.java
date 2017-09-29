@@ -12,6 +12,7 @@ import com.sun.deploy.association.Action;
  */
 public class DefaultAction {
     public String execute(){
+        System.out.println("default");
         return "success";
     }
 }

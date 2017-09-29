@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <!--通过常量方式改变struts默认的属性配置 设置action必须以.do结尾-->
+    <constant name="struts.action.extension" value="do"/>
+    <!--动态方法调用开关 默认开启-->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="RegPkg" namespace="/regns" extends="struts-default">
+        <global-allowed-methods>regist,toRegist</global-allowed-methods>
+        <action name="RegAction_*" class="com.yb.struts.action.RegistAction" method="{1}">
+            <result name="success">/reg/registSuccess.jsp</result>
+            <result name="input">/reg/regist.jsp</result>
+            <result name="toregist">/reg/regist.jsp</result>
+            <interceptor-ref name="defaultStack">
+                <param name="validation.excludeMethods">input,back,cancel,browse,toRegist</param>
+            </interceptor-ref>
+        </action>
+<!--
+        改变拦截器的配置，使一些方法不会被校验
+-->
+
+
+    </package>
+
+</struts>
