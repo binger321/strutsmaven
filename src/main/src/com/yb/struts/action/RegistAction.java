@@ -81,7 +81,7 @@ public class RegistAction extends ActionSupport{
         return "toregist";
     }
 //    使其忽略校验的方法：1.增加@SkipValidation 忽略校验的注解
-//                     2.加前缀validate-  validateDo-
+//                     2.加前缀validate-或validateDo-
 //                     3.在对应的配置文件中 actions里面
 //                <interceptor-ref name="defaultStack">
 //                      <param name="validation.excludeMethods">input,back,cancel,browse,toRegist</param>

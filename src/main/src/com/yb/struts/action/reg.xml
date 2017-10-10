@@ -16,8 +16,17 @@
             <result name="input">/reg/regist.jsp</result>
             <result name="toregist">/reg/regist.jsp</result>
             <interceptor-ref name="defaultStack">
+                <!--设置需要校验的方法名-->
                 <param name="validation.excludeMethods">input,back,cancel,browse,toRegist</param>
+                <!--设置上传文件的大小上限-->
+                <param name="fileUpload.maximumSize">200000</param>
+                <!--设置文件的后缀名-->
+                <param name="fileUpload.allowedExtensions">.txt,.png</param>
+                <!--设置文件类型-->
+                <param name="fileUpload.allowedTypes">txt,image/jpg,image/png</param>
             </interceptor-ref>
+
+
         </action>
 <!--
         改变拦截器的配置，使一些方法不会被校验
