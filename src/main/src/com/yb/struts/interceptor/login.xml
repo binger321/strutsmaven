@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="LoginPkg" namespace="/login" extends="struts-default">
+
+
+        <interceptors>
+            <!--注册 登录拦截器-->
+            <interceptor name="loginInterceptor" class="com.yb.struts.interceptor.LoginInterceptor"/>
+            <!--自定义拦截器栈-->
+            <interceptor-stack name="loginStack">
+                <interceptor-ref name="loginInterceptor"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <!--设置默认拦截器-->
+        <default-interceptor-ref name="loginStack"/>
+
+        <!--定义全局结果-->
+        <global-results>
+            <result name="login">/login/login.jsp</result>
+        </global-results>
+
+        <global-allowed-methods>login,toLoginView</global-allowed-methods>
+
+
+
+        <!--注册登录action-->
+        <action name="loginAction_*"  class="com.yb.struts.interceptor.LoginAction" method="{1}">
+            <result name="success">/login/loginSuccess.jsp</result>
+            <result name="loginView">/login/login.jsp</result>
+        </action>
+    </package>
+</struts>

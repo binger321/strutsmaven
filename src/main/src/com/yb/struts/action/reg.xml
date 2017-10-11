@@ -16,7 +16,7 @@
             <result name="input">/reg/regist.jsp</result>
             <result name="toregist">/reg/regist.jsp</result>
             <interceptor-ref name="defaultStack">
-                <!--设置需要校验的方法名-->
+                <!--设置不需要校验的方法名-->
                 <param name="validation.excludeMethods">input,back,cancel,browse,toRegist</param>
                 <!--设置上传文件的大小上限-->
                 <param name="fileUpload.maximumSize">200000</param>

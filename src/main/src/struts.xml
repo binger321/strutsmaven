@@ -16,9 +16,6 @@
     <!--设置默认的class引用，将某个类作为默认的action类-->
         <!--<default-class-ref class="com.yb.struts.action.DefaultAction"/>-->
 
-        <action name="login" class="com.yb.struts.action.LoginAction" method="success">
-            <result name="success">loginSuccess.jsp</result>
-        </action>
         <action name="hello">
             <result type="redirect">index.jsp</result>
         </action>
@@ -32,4 +29,7 @@
 
 
     <include file="com/yb/struts/action/reg.xml"/>
+    <include file="com/yb/struts/interceptor/login.xml"/>
+    <include file="com/yb/struts/token/token.xml"/>
+    <include file="com/yb/struts/ognl/ognl.xml"/>
 </struts>

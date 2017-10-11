@@ -14,6 +14,5 @@
 <body>
     <%--获取在action类中的属性--%>
     name:<s:property value="name"/><br>
-    age:<s:property value="age"/><br>
 </body>
 </html>

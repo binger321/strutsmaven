@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <package name="TokenPkg" extends="struts-default" namespace="/token">
+        <global-allowed-methods>reg,toRegView</global-allowed-methods>
+        <action name="tokenAction_*" class="com.yb.struts.token.TokenAction" method="{1}">
+            <result name="success">/token/success.jsp</result>
+            <!--无效令牌的返回结果-->
+            <result name="invalid.token">/token/reg.jsp</result>
+            <result name="regView">/token/reg.jsp</result>
+            <!--如果指定了一个拦截器，则覆盖默认的配置，必须手动添加默认拦截器-->
+            <interceptor-ref name="token">
+                <param name="excludeMethods">toRegView</param>
+            </interceptor-ref>
+            <interceptor-ref name="defaultStack"/>
+        </action>
+    </package>
+</struts>
