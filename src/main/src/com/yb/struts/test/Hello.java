@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +23,7 @@ public class Hello {
             int len=str.length();
             int num=Integer.parseInt(str);
             ArrayList<String> result=new ArrayList<String>();
-//            int num=4035;
+//            int num=5096;
 //            int len=4;
             for (int i=0;i<len-1;i++){
                 int weishu=(int)Math.pow(10,len-i-1);
@@ -41,13 +42,43 @@ public class Hello {
 //            System.out.println(c);
             result.add(c);
 
+//        System.out.println(Arrays.toString(result.toArray()));
+        ArrayList<String> t=quLin(result);
+
+        for (String str1:t){
+            System.out.print(str1);
+        }
+            System.out.println("");
+//        System.out.println(Arrays.toString(t.toArray()));
 
         }
     }
 
-    public static void quLin(ArrayList a){
-        for(int i=0;i<a.size();i++){
-            if ("Áã".equals(a.get(i))&&i)
+    public static ArrayList quLin(ArrayList a){
+        if (a.size()==0){
+            a.add("Áã");
+            return a;
         }
+        int tag=0;
+        if ("Áã".equals(a.get(0))){
+            a.remove(0);
+//            System.out.println(Arrays.toString(a.toArray()));
+            return quLin(a);
+        }
+        for(int i=0;i<a.size();i++){
+            if("Áã".equals(a.get(i))){
+                if (tag!=0){
+                    if((i-tag)==1){
+                        a.remove(i);
+                        return quLin(a);
+                    }else
+                        tag=i;
+                }else
+                    tag=i;
+            }
+        }
+        if ("Áã".equals(a.get(a.size()-1)))
+            a.remove(a.size()-1);
+        return a;
     }
 }
