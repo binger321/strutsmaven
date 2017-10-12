@@ -22,7 +22,7 @@ public class AddressConverter extends StrutsTypeConverter {
                 address.setProvince(add[0]);
                 address.setCity(add[1]);
                 address.setStreet(add[2]);
-                Integer
+                return address;
             }
         }
         return null;

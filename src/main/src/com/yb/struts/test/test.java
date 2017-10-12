@@ -44,8 +44,6 @@ public class test {
         int p=22;
         char q=(char)p;
         System.out.println("::"+q);
-        System.out.println(--);
-
     }
 
     public static void swap(String a,String b){

@@ -1,0 +1,8 @@
+<component name="libraryTable">
+  <library name="org.apache.logging.log4j:log4j-core:2.9.1" type="repository">
+    <properties maven-id="org.apache.logging.log4j:log4j-core:2.9.1" />
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

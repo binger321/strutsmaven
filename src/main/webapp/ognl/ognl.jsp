@@ -17,7 +17,6 @@
         <s:submit/>
     </s:form>
 
-    <s:property value="address"/>
 </body>
 
 </html>
