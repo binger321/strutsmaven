@@ -11,6 +11,15 @@ package com.yb.struts.bean;
 public class User {
     private String name;
     private Integer age;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

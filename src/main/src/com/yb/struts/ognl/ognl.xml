@@ -7,9 +7,10 @@
 <struts>
 
     <package name="OgnlPkg" namespace="/ognl" extends="struts-default">
-        <global-allowed-methods>set</global-allowed-methods>
+        <global-allowed-methods>set,toShowView</global-allowed-methods>
         <action name="ognlAction_*" method="{1}" class="com.yb.struts.ognl.OgnlAction">
             <result name="success">/ognl/result.jsp</result>
+            <result name="toShowView">/ognl/showView.jsp</result>
         </action>
     </package>
 </struts>

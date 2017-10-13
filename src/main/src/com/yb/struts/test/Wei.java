@@ -14,6 +14,11 @@ public class Wei {
             case 10:return "Ê°";
             case 100:return "°Û";
             case 1000:return "Çª";
+            case 10000:return "Íò";
+            case 100000:return "Ê°";
+            case 1000000:return "°Û";
+            case 10000000:return "Çª";
+            case 100000000:return "ÒÚ";
         }
         return "";
     }
