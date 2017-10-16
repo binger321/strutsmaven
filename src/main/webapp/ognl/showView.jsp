@@ -40,12 +40,13 @@
                 </s:url>
                 <a href='<s:property value="#editUrl"/>'>编辑</a>
             </td>
-            <td><s:property value="#u.age"/> </td>
+            <td><a href='<s:url action="UserAction_show.do" namespace="/user"><s:param name="id" value="#u.id"/> </s:url>'>查看</a> </td>
 
         </tr>
     </s:iterator>
 
 </table>
 <s:url includeParams="all"/>
+h:<s:property value="sayHello(“'nihao'”)"/>
 </body>
 </html>

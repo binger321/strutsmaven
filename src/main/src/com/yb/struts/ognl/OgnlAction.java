@@ -51,4 +51,8 @@ public class OgnlAction {
         }
         return "toShowView";
     }
+
+    public String sayHello(String str){
+        return ("sayHello "+str);
+    }
 }
